@@ -1,4 +1,4 @@
-package pages;
+package userVerification;
 
 import org.junit.After;
 import org.junit.Before;
@@ -6,13 +6,16 @@ import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.MainPage;
+import pages.RegistrationPage;
 
-public class EBookAppTestSuite {
+import java.util.concurrent.TimeUnit;
+
+public class TestLogInAndRegistrationUser {
     WebDriver driver;
     WebDriverWait wait;
 
@@ -24,10 +27,10 @@ public class EBookAppTestSuite {
         wait = new WebDriverWait(driver, 10);
     }
 
-//    @After
-//    public void tearDown() {
-//        driver.close();
-//    }
+    @After
+    public void tearDown() {
+        driver.close();
+    }
 
     @Test
     public void shouldRegisterUser() {
@@ -64,11 +67,27 @@ public class EBookAppTestSuite {
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#add-title-button")));
 
         String nameOfAddNewTitleButton = driver.findElement(By.cssSelector("#add-title-button")).getText();
-        Assertions.assertEquals("ADD NEW",nameOfAddNewTitleButton);
+        Assertions.assertEquals("ADD NEW", nameOfAddNewTitleButton);
     }
 
     @Test
     public void shouldNotLogInNotRegisteredUser() {
+        MainPage mainPage = PageFactory.initElements(driver, MainPage.class);
+        mainPage.logInUser("user", "pass111");
 
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+
+        String failedLoginMessage = driver.findElement(By.xpath("//div/form/div[1]/p")).getText();
+        Assertions.assertEquals("Login failed", failedLoginMessage);
+    }
+    @Test
+    public void shouldNotLogInUserWhenWrongPasswordIsEntered() {
+        MainPage mainPage = PageFactory.initElements(driver, MainPage.class);
+        mainPage.logInUser("user111", "pass111");
+
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+
+        String failedLoginMessage = driver.findElement(By.xpath("//div/form/div[1]/p")).getText();
+        Assertions.assertEquals("Login failed", failedLoginMessage);
     }
 }

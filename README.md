@@ -24,11 +24,13 @@ Ekran nr 3 – lista egzemplarzy
 
 wyświetlona lista: data zakupu, status (na stanie, wypożyczona)
 możliwość dodawania egzemplarzy, edycji, usuwania, wejścia w listę wypożyczeń
+
 Ekran nr 4 – lista wypożyczeń
 
 wyświetlona lista: imię i nazwisko klienta, data wypożyczenia, data wygaśnięcia
 możliwość wprowadzenia i usunięcia wypożyczenia
 możliwość edycji
+
 Ekran nr 5 – wypożyczenie
 
 formatka z polami: imię i nazwisko klienta (1 pole), data wypożyczenia, data wygaśnięcia

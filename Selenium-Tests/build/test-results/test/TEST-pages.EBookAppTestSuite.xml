@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="pages.EBookAppTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-08-22T22:43:30" hostname="LAPTOP-KCTPGNVN" time="4.654">
+<testsuite name="pages.EBookAppTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-08-26T00:49:28" hostname="LAPTOP-KCTPGNVN" time="7.526">
   <properties/>
-  <testcase name="logInRegisteredUser" classname="pages.EBookAppTestSuite" time="4.654"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[Starting ChromeDriver 103.0.5060.53 (a1711811edd74ff1cf2150f36ffa3b0dae40b17f-refs/branch-heads/5060@{#853}) on port 41349
+  <testcase name="shouldRegisterUser" classname="pages.EBookAppTestSuite" time="7.526"/>
+  <system-out><![CDATA[7Ż7+?v>¬N&ę?›jŹ
+vQ]c?¶?’WBB1?»6
+]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 103.0.5060.53 (a1711811edd74ff1cf2150f36ffa3b0dae40b17f-refs/branch-heads/5060@{#853}) on port 35528
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1661208213.036][WARNING]: This version of ChromeDriver has not been tested with Chrome version 104.
-Aug 23, 2022 12:43:33 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+[1661474971.459][WARNING]: This version of ChromeDriver has not been tested with Chrome version 104.
+Aug 26, 2022 2:49:31 AM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 ]]></system-err>
 </testsuite>

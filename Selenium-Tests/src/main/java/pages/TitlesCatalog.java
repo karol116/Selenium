@@ -13,18 +13,21 @@ public class TitlesCatalog extends AbstractPage {
 
     public TitlesCatalog(WebDriver driver) {
         super(driver);
+        PageFactory.initElements(this.driver, this);
+    }
+    public String getCurrentUrl(WebDriver driver){
+        return driver.getCurrentUrl();
     }
 
     public AddTitlePage addTitle(){
         return new AddTitlePage(driver);
     }
-    public ListOfCopies showTitleCopies(WebDriver driver, int numberOfTitle) {
-        PageFactory.initElements(driver, TitlesCatalog.class);
+    public ListOfCopies showTitleCopies(int indexOfTitle) {
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#add-title-button")));
 
         List<WebElement> booksCopies = driver.findElements(By.xpath("//div[2]/a/button"));
-        booksCopies.get(numberOfTitle - 1).click();
+        booksCopies.get(indexOfTitle - 1).click();
         return PageFactory.initElements(driver, ListOfCopies.class);
     }
 

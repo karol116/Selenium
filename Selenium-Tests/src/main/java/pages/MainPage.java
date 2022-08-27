@@ -17,8 +17,6 @@ public class MainPage extends AbstractPage {
     @FindBy(css = "#register-btn")
     static WebElement signUpButton;
 
-
-
     public MainPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(this.driver, this);

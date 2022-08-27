@@ -28,6 +28,7 @@ public class ListOfCopiesTestSuite {
 
     @Test
     public void shouldAddCopyOfBookToListOfCopies() {
+
     }
 
     @Test

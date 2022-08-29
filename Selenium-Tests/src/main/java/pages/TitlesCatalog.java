@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
@@ -17,16 +16,21 @@ public class TitlesCatalog extends AbstractPage {
 
     @FindBy(css = "#add-title-button")
     static WebElement addNewTitleButton;
-    @FindBy(xpath = "//div[1]/label")
+    @FindBy(xpath = "//div[1]/label/input")
     static WebElement title;
-    @FindBy(xpath = "//div[2]/label")
+    @FindBy(xpath = "//div[2]/label/input")
     static WebElement author;
-    @FindBy(xpath = "//div[3]/label")
+    @FindBy(xpath = "//div[3]/label/input")
     static WebElement year;
     @FindBy(xpath = "//form /button")
     static WebElement confirmAddedNewTitleButton;
     @FindBy(xpath = "//li/div[2]/button[2]")
     static List<WebElement> removeButtons;
+    @FindBy(xpath = "//li/div[2]/button[1]")
+    static List<WebElement> updateButtons;
+    @FindBy(xpath = "//div/div/form/button")
+    static WebElement editTitleButton;
+
 
     private final WebDriverWait wait = new WebDriverWait(driver, 2);
 
@@ -50,6 +54,18 @@ public class TitlesCatalog extends AbstractPage {
         return new TitlesCatalog(driver);
     }
 
+    public void updateTitle(int indexOfTitleEditButtons, String newTitle, String newAuthor, int newYear) {
+        wait.until(elementToBeClickable(updateButtons.get(indexOfTitleEditButtons - 1))).click();
+        title.clear();
+        author.clear();
+        year.clear();
+
+        title.sendKeys(newTitle);
+        author.sendKeys(newAuthor);
+        year.sendKeys(valueOf(newYear));
+        editTitleButton.click();
+    }
+
     public ListOfCopies showTitleCopies(int indexOfTitle) {
 //        wait.until(ExpectedConditions.elementToBeClickable(removeButtons.get(1)));
 
@@ -57,5 +73,4 @@ public class TitlesCatalog extends AbstractPage {
         booksCopies.get(indexOfTitle - 1).click();
         return PageFactory.initElements(driver, ListOfCopies.class);
     }
-
 }

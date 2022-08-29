@@ -6,7 +6,6 @@ import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,6 +16,8 @@ import java.util.concurrent.TimeUnit;
 public class TitlesCatalogTestSuite {
     WebDriver driver;
     WebDriverWait wait;
+    MainPage mainPage;
+    TitlesCatalog titlesCatalog;
 
     @Before
     public void testSetUp() {
@@ -24,30 +25,51 @@ public class TitlesCatalogTestSuite {
         driver = new ChromeDriver();
         driver.navigate().to("https://ta-ebookrental-fe.herokuapp.com/login");
         wait = new WebDriverWait(driver, 10);
+        mainPage = PageFactory.initElements(driver, MainPage.class);
+        titlesCatalog = mainPage.logInUser("user111", "stR091");
     }
 
-//    @After
-//    public void tearDown() {
-//        driver.close();
-//    }
+    @After
+    public void tearDown() {
+        driver.close();
+    }
 
 
     @Test
     public void shouldAddBookToTitlesCatalog() {
-        MainPage mainPage = PageFactory.initElements(driver, MainPage.class);
-        TitlesCatalog titlesCatalog = mainPage.logInUser("user111", "stR091");
         titlesCatalog.addTitle("Czysty kod", "Robert C. Martin", 2009);
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+
         String authorName = driver.findElement(By.xpath("//li/div[1]/div[1]")).getText();
         Assertions.assertEquals("CZYSTY KOD", authorName);
+
         titlesCatalog.removeTitle(1);
     }
 
     @Test
-    public void shouldUpdateBookInformation() {
+    public void shouldUpdateBookInformation() throws InterruptedException {
+        titlesCatalog.addTitle("Czysty kod", "Robert C. Martin", 2009);
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        titlesCatalog.updateTitle(1, "Pasja Testowania", "Krzysztof Jadczyk", 2020);
+        Thread.sleep(1500);
+        String title = driver.findElement(By.xpath("//div/div/ul/li[1]/div/div[1]")).getText();
+
+        Assertions.assertEquals("PASJA TESTOWANIA", title);
+        titlesCatalog.removeTitle(1);
     }
 
     @Test
-    public void shouldRemoveBookFromTitlesCatalog() {
+    public void shouldRemoveBookFromTitlesCatalog() throws InterruptedException {
+        titlesCatalog.addTitle("Czysty kod", "Robert C. Martin", 2009);
+        titlesCatalog.addTitle("Docker Praktyczne Zastosowania", "Sean P. Kane", 2018);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//ul/li[1]/div/button[2]")));
+        titlesCatalog.removeTitle(1);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//ul/li[2]/div/button[2]")));
+        titlesCatalog.removeTitle(2);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div/p")));
+
+        String noTitlesMessage = driver.findElement(By.xpath("//div/p")).getText();
+
+        Assertions.assertEquals("No titles", noTitlesMessage);
     }
 }

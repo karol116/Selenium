@@ -37,6 +37,6 @@ public class MainPage extends AbstractPage {
         password.sendKeys(pass);
         logInButton.click();
 
-        return new TitlesCatalog(driver);
+        return PageFactory.initElements(driver,TitlesCatalog.class);
     }
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="pages.ListOfCopiesTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-08-30T21:32:43" hostname="LAPTOP-KCTPGNVN" time="10.724">
+  <properties/>
+  <testcase name="shouldAddCopyOfBookToListOfCopies" classname="pages.ListOfCopiesTestSuite" time="10.724"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 103.0.5060.53 (a1711811edd74ff1cf2150f36ffa3b0dae40b17f-refs/branch-heads/5060@{#853}) on port 22021
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1661895165.969][WARNING]: This version of ChromeDriver has not been tested with Chrome version 104.
+Aug 30, 2022 11:32:46 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>

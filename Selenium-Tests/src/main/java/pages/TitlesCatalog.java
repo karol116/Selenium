@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
@@ -30,6 +31,8 @@ public class TitlesCatalog extends AbstractPage {
     static List<WebElement> updateButtons;
     @FindBy(xpath = "//div/div/form/button")
     static WebElement editTitleButton;
+    @FindBy(xpath = "//div[2]/a/button")
+    static WebElement showHistoryButton;
 
 
     private final WebDriverWait wait = new WebDriverWait(driver, 2);
@@ -67,9 +70,9 @@ public class TitlesCatalog extends AbstractPage {
     }
 
     public ListOfCopies showTitleCopies(int indexOfTitle) {
-//        wait.until(ExpectedConditions.elementToBeClickable(removeButtons.get(1)));
+        wait.until(ExpectedConditions.elementToBeClickable(showHistoryButton));
 
-        List<WebElement> booksCopies = driver.findElements(By.xpath("//div[2]/a/button"));
+        List<WebElement> booksCopies = driver.findElements(By.xpath("//div/a/button"));
         booksCopies.get(indexOfTitle - 1).click();
         return PageFactory.initElements(driver, ListOfCopies.class);
     }

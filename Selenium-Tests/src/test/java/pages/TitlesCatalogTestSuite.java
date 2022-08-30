@@ -30,7 +30,8 @@ public class TitlesCatalogTestSuite {
     }
 
     @After
-    public void tearDown() {
+    public void tearDown() throws InterruptedException {
+        Thread.sleep(1000);
         driver.close();
     }
 

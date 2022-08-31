@@ -5,6 +5,16 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/API-Testing-Postman" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../Gradle/gradle-7.4.2" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/API-Testing-Postman" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/Selenium-Tests" />
         <option name="gradleHome" value="$PROJECT_DIR$/../../../../../Gradle/gradle-7.4.2" />
         <option name="modules">

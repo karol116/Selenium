@@ -1,0 +1,452 @@
+{
+	"id": "2c4c2c6e-e50f-4cdd-85cb-5ad167076dfa",
+	"name": "TA Backend",
+	"timestamp": "2022-08-18T21:24:46.972Z",
+	"collection_id": "21415786-efeba3e3-0571-476b-86a7-e115eaffcfb1",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 14,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "14c028f6-5efb-45f1-a025-94ac45cf3431",
+			"name": "CreateTitle",
+			"url": "https://ta-ebookrental-be.herokuapp.com/titles/",
+			"time": 66,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Name ": true
+			},
+			"testPassFailCounts": {
+				"Name ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				66
+			],
+			"allTests": [
+				{
+					"Name ": true
+				}
+			]
+		},
+		{
+			"id": "849ac806-f427-42d5-b780-68c6ec367ffc",
+			"name": "GetTitles",
+			"url": "https://ta-ebookrental-be.herokuapp.com/titles/?userId=41876",
+			"time": 64,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Name ": true
+			},
+			"testPassFailCounts": {
+				"Name ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				64
+			],
+			"allTests": [
+				{
+					"Name ": true
+				}
+			]
+		},
+		{
+			"id": "1b08d34f-0172-4626-941e-af2cd05952b1",
+			"name": "UpdateTitle",
+			"url": "https://ta-ebookrental-be.herokuapp.com/titles/",
+			"time": 67,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Name ": true
+			},
+			"testPassFailCounts": {
+				"Name ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				67
+			],
+			"allTests": [
+				{
+					"Name ": true
+				}
+			]
+		},
+		{
+			"id": "096ba89a-ddec-472c-b048-8c5bad69c8a0",
+			"name": "DeleteTitle",
+			"url": "https://ta-ebookrental-be.herokuapp.com/titles/?userId=41876&id=41928",
+			"time": 65,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Name ": true
+			},
+			"testPassFailCounts": {
+				"Name ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				65
+			],
+			"allTests": [
+				{
+					"Name ": true
+				}
+			]
+		},
+		{
+			"id": "cc004f0d-2255-439d-8bcc-6cf08f55b7e0",
+			"name": "CreateItem",
+			"url": "https://ta-ebookrental-be.herokuapp.com/items/",
+			"time": 71,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Name ": true
+			},
+			"testPassFailCounts": {
+				"Name ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				71
+			],
+			"allTests": [
+				{
+					"Name ": true
+				}
+			]
+		},
+		{
+			"id": "b1d3f2b5-c78e-4735-a476-911c85450f47",
+			"name": "GetItem",
+			"url": "https://ta-ebookrental-be.herokuapp.com/items/?userId=41876&titleId=41913",
+			"time": 73,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Name ": true
+			},
+			"testPassFailCounts": {
+				"Name ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				73
+			],
+			"allTests": [
+				{
+					"Name ": true
+				}
+			]
+		},
+		{
+			"id": "438e001c-263d-498b-a056-2f763c9b36de",
+			"name": "UpdateItem",
+			"url": "https://ta-ebookrental-be.herokuapp.com/items/",
+			"time": 68,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Name ": true
+			},
+			"testPassFailCounts": {
+				"Name ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				68
+			],
+			"allTests": [
+				{
+					"Name ": true
+				}
+			]
+		},
+		{
+			"id": "432c7f32-eae0-44c7-a78f-126a5f8a4bfe",
+			"name": "DeleteItem",
+			"url": "https://ta-ebookrental-be.herokuapp.com/items/?userId=41876&id=41929",
+			"time": 71,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Name ": true
+			},
+			"testPassFailCounts": {
+				"Name ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				71
+			],
+			"allTests": [
+				{
+					"Name ": true
+				}
+			]
+		},
+		{
+			"id": "8d0ba29e-b7b8-415d-8fd8-828ed47310d8",
+			"name": "GetRents",
+			"url": "https://ta-ebookrental-be.herokuapp.com/rents/?userId=41876&itemId=41914",
+			"time": 68,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Name ": true
+			},
+			"testPassFailCounts": {
+				"Name ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				68
+			],
+			"allTests": [
+				{
+					"Name ": true
+				}
+			]
+		},
+		{
+			"id": "f6cf9a61-2ad7-44f6-aa55-2b6844deb531",
+			"name": "CreateRent",
+			"url": "https://ta-ebookrental-be.herokuapp.com/rents/",
+			"time": 71,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Name ": true
+			},
+			"testPassFailCounts": {
+				"Name ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				71
+			],
+			"allTests": [
+				{
+					"Name ": true
+				}
+			]
+		},
+		{
+			"id": "45dd0fc7-de63-473a-afad-cf1ee8677b56",
+			"name": "UpdateRent",
+			"url": "https://ta-ebookrental-be.herokuapp.com/rents/",
+			"time": 76,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Name ": true
+			},
+			"testPassFailCounts": {
+				"Name ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				76
+			],
+			"allTests": [
+				{
+					"Name ": true
+				}
+			]
+		},
+		{
+			"id": "5a113116-100e-4476-9917-0ef13928d2fc",
+			"name": "DeleteRent",
+			"url": "https://ta-ebookrental-be.herokuapp.com/rents/?userId=41876&id=41930",
+			"time": 70,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Name ": true
+			},
+			"testPassFailCounts": {
+				"Name ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				70
+			],
+			"allTests": [
+				{
+					"Name ": true
+				}
+			]
+		},
+		{
+			"id": "47edf0d0-5c62-4d5a-bf54-0a231cfb4b97",
+			"name": "CreateLogin",
+			"url": "https://ta-ebookrental-be.herokuapp.com/user/login",
+			"time": 60,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Name ": true
+			},
+			"testPassFailCounts": {
+				"Name ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				60
+			],
+			"allTests": [
+				{
+					"Name ": true
+				}
+			]
+		},
+		{
+			"id": "11bd921b-96e7-4f35-90e0-c4256f810c58",
+			"name": "CreateRegister",
+			"url": "https://ta-ebookrental-be.herokuapp.com/user/register",
+			"time": 63,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Name ": true
+			},
+			"testPassFailCounts": {
+				"Name ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				63
+			],
+			"allTests": [
+				{
+					"Name ": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 953,
+	"collection": {
+		"requests": [
+			{
+				"id": "14c028f6-5efb-45f1-a025-94ac45cf3431",
+				"method": "POST"
+			},
+			{
+				"id": "849ac806-f427-42d5-b780-68c6ec367ffc",
+				"method": "GET"
+			},
+			{
+				"id": "1b08d34f-0172-4626-941e-af2cd05952b1",
+				"method": "PUT"
+			},
+			{
+				"id": "096ba89a-ddec-472c-b048-8c5bad69c8a0",
+				"method": "DELETE"
+			},
+			{
+				"id": "cc004f0d-2255-439d-8bcc-6cf08f55b7e0",
+				"method": "POST"
+			},
+			{
+				"id": "b1d3f2b5-c78e-4735-a476-911c85450f47",
+				"method": "GET"
+			},
+			{
+				"id": "438e001c-263d-498b-a056-2f763c9b36de",
+				"method": "PUT"
+			},
+			{
+				"id": "432c7f32-eae0-44c7-a78f-126a5f8a4bfe",
+				"method": "DELETE"
+			},
+			{
+				"id": "8d0ba29e-b7b8-415d-8fd8-828ed47310d8",
+				"method": "GET"
+			},
+			{
+				"id": "f6cf9a61-2ad7-44f6-aa55-2b6844deb531",
+				"method": "POST"
+			},
+			{
+				"id": "45dd0fc7-de63-473a-afad-cf1ee8677b56",
+				"method": "PUT"
+			},
+			{
+				"id": "5a113116-100e-4476-9917-0ef13928d2fc",
+				"method": "DELETE"
+			},
+			{
+				"id": "47edf0d0-5c62-4d5a-bf54-0a231cfb4b97",
+				"method": "POST"
+			},
+			{
+				"id": "11bd921b-96e7-4f35-90e0-c4256f810c58",
+				"method": "POST"
+			}
+		]
+	}
+}

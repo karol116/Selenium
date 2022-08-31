@@ -14,10 +14,14 @@ public class ListOfCopies extends AbstractPage {
     static WebElement addNewBookCopyButton;
     @FindBy(xpath = "//form/button")
     static WebElement addCopyButton;
+    @FindBy(xpath = "//ul/li/div/button[1]")
+    static WebElement editCopyButton;
     @FindBy(xpath = "//ul/li/div/button[2]")
     static List<WebElement> removeCopyButtons;
     @FindBy(xpath = "//div/div/div/div/button")
     static WebElement returnButton;
+    @FindBy(xpath = "//div/div/input")
+    static WebElement inputField;
 
     public ListOfCopies(WebDriver driver) {
         super(driver);
@@ -38,4 +42,8 @@ public class ListOfCopies extends AbstractPage {
         returnButton.click();
         return PageFactory.initElements(driver, TitlesCatalog.class);
     }
-}
+
+//    public void updateCopy(WebDriver driver, String cssSelector, String date) throws InterruptedException {
+//      Thread.sleep(1000);
+//        editCopyButton.click();
+    }

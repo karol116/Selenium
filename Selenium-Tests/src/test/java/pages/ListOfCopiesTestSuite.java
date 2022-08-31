@@ -10,6 +10,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.LocalDate;
+
 public class ListOfCopiesTestSuite {
     WebDriver driver;
     WebDriverWait wait;
@@ -29,10 +31,10 @@ public class ListOfCopiesTestSuite {
         listOfCopies = titlesCatalog.showTitleCopies(1);
     }
 
-//    @After
-//    public void tearDown() {
-//        driver.close();
-//    }
+    @After
+    public void tearDown() {
+        driver.close();
+    }
 
 
     @Test
@@ -59,16 +61,21 @@ public class ListOfCopiesTestSuite {
         Thread.sleep(1000);
         String noTitlesMessage = driver.findElement(By.xpath("//div/p")).getText();
         Assertions.assertEquals("No copies...", noTitlesMessage);
-
     }
 
+//    @Test
+//    public void shouldUpdateCopyPurchaseDate() throws InterruptedException {
+//        listOfCopies.addCopyOfBookToList();
+//        listOfCopies.updateCopy(driver, "#id","01/09/2020");
+//    }
+
+//Test failed
     @Test
-    public void shouldUpdateCopyPurchaseDate() {
+    public void defaultPurchaseDateShouldBeEqualCurrentDate() {
+        listOfCopies.addCopyOfBookToList();
+        String dateOfPurchase = driver.findElement(By.xpath("//ul/li/div/div[2]")).getText();
+        String expectedDateOfPurchase = LocalDate.now().plusDays(3).toString();
 
-    }
-
-
-    @Test
-    public void defaultExpirationDateShouldBeEqualsRentDatePlusThreeDays() {
+        Assertions.assertEquals(expectedDateOfPurchase, dateOfPurchase);
     }
 }

@@ -44,4 +44,9 @@ public class RentsHistioryTestSuite {
     @Test
     public void shouldNotRentCopyToTwoPersonsInOverlapPeriodOfTime() {
     }
+
+    @Test
+    public void defaultExpirationDateShouldBeEqualsRentDatePlusThreeDays() {
+
+    }
 }

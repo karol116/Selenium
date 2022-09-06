@@ -31,7 +31,7 @@ public class TitlesCatalog extends AbstractPage {
     static List<WebElement> updateButtons;
     @FindBy(xpath = "//div/div/form/button")
     static WebElement editTitleButton;
-    @FindBy(xpath = "//div[2]/a/button")
+    @FindBy(xpath = "//li[1]/div[2]/a/button")
     static WebElement showHistoryButton;
 
 

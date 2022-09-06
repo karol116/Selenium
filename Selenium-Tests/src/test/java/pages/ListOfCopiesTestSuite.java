@@ -11,6 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.LocalDate;
+//TO DO
+//Adding methods cleaning entered data
 
 public class ListOfCopiesTestSuite {
     WebDriver driver;
@@ -30,11 +32,11 @@ public class ListOfCopiesTestSuite {
         titlesCatalog.addTitle("Title", "Author", 1999);
         listOfCopies = titlesCatalog.showTitleCopies(1);
     }
-
-    @After
-    public void tearDown() {
-        driver.close();
-    }
+//
+//    @After
+//    public void tearDown() {
+//        driver.close();
+//    }
 
 
     @Test
@@ -71,7 +73,7 @@ public class ListOfCopiesTestSuite {
 
 //Test failed
     @Test
-    public void defaultPurchaseDateShouldBeEqualCurrentDate() {
+    public void defaultPurchaseDateShouldBeEqualsCurrentDate() {
         listOfCopies.addCopyOfBookToList();
         String dateOfPurchase = driver.findElement(By.xpath("//ul/li/div/div[2]")).getText();
         String expectedDateOfPurchase = LocalDate.now().plusDays(3).toString();

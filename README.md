@@ -8,6 +8,9 @@ Backend: https://ta-ebookrental-be.herokuapp.com
 Kontrolery:
 https://github.com/kodilla/ta-ebooklibrary-backend/tree/master/src/main/java/com/kodilla/ebooklibrary/controller
 
+Przypadki testowe wykorzystane w testach napisanych za pomocą Selenium w Javie:
+PrzypadkiTestoweProjektKońcowy.xlsx
+
 # Specyfikacja:
 
 Tworzona aplikacja ma za zadanie realizować następującą funkcjonalność:

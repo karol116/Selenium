@@ -1,12 +1,12 @@
 # Selenium
 Adres testowanej aplikacji:
+https://ta-ebookrental-fe.herokuapp.com
 
-Frontend: https://ta-ebookrental-fe.herokuapp.com
+Przygotowane klasy odpowiadające wszystkim podstronom aplikacji webowej:
+https://github.com/karol116/Selenium-Test-Project/tree/master/Selenium-Tests/src/main/java/pages
 
-Backend: https://ta-ebookrental-be.herokuapp.com
-
-Kontrolery:
-https://github.com/kodilla/ta-ebooklibrary-backend/tree/master/src/main/java/com/kodilla/ebooklibrary/controller
+Testy napisane za pomocą Selenium WebDriver:
+https://github.com/karol116/Selenium-Test-Project/tree/master/Selenium-Tests/src/test/java
 
 Przygotowane przypadki testowe wykorzystane w testach napisanych za pomocą Selenium w Javie:
 https://github.com/karol116/Selenium/blob/master/PrzypadkiTestoweProjektKo%C5%84cowy.xlsx
@@ -40,3 +40,9 @@ formatka z polami: imię i nazwisko klienta (1 pole), data wypożyczenia, data w
 przy wejściu jako nowe wypożyczenie dostępne do edycji dwa pierwsze pola (drugie ustawia się domyślnie na sysdate()+3, pierwsze na sysdate())
 przy wejściu jako edycja dostępne do edycji wszystkie pola.
 Każdy użytkownik pracuje niezależnie na swojej liście eBooków – jest to realizowane przez backend.
+
+Adres dla testów za pomocą narzędzia Postman (Backend):
+https://ta-ebookrental-be.herokuapp.com
+
+Kontrolery:
+https://github.com/kodilla/ta-ebooklibrary-backend/tree/master/src/main/java/com/kodilla/ebooklibrary/controller

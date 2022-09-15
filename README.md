@@ -8,7 +8,7 @@ Backend: https://ta-ebookrental-be.herokuapp.com
 Kontrolery:
 https://github.com/kodilla/ta-ebooklibrary-backend/tree/master/src/main/java/com/kodilla/ebooklibrary/controller
 
-Przypadki testowe wykorzystane w testach napisanych za pomocą Selenium w Javie:
+Przygotowane przypadki testowe wykorzystane w testach napisanych za pomocą Selenium w Javie:
 https://github.com/karol116/Selenium/blob/master/PrzypadkiTestoweProjektKo%C5%84cowy.xlsx
 
 # Specyfikacja:

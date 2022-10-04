@@ -19,6 +19,8 @@ public class RentsHistory extends AbstractPage {
     static WebElement editCopyRentInformation;
     @FindBy(xpath = "//ul/li/div/button[2]")
     static List<WebElement> removeRentButtons;
+    @FindBy(css = "#return-button")
+    static WebElement returnButton;
 
     public RentsHistory(WebDriver driver) {
         super(driver);
@@ -43,5 +45,10 @@ public class RentsHistory extends AbstractPage {
     public void removeBookRent(int rentIndexNumber) throws InterruptedException {
         Thread.sleep(1000);
         removeRentButtons.get(rentIndexNumber - 1).click();
+    }
+
+    public ListOfCopies returnToListOfCopies() {
+        returnButton.click();
+        return PageFactory.initElements(driver, ListOfCopies.class);
     }
 }

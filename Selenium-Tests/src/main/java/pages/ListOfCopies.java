@@ -1,15 +1,12 @@
 package pages;
 
-import net.bytebuddy.implementation.bytecode.Throw;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.List;
-import java.util.NoSuchElementException;
 
 public class ListOfCopies extends AbstractPage {
     @FindBy(xpath = "//*[@id=\"add-item-button\"]")
@@ -49,11 +46,6 @@ public class ListOfCopies extends AbstractPage {
         returnButton.click();
         return PageFactory.initElements(driver, TitlesCatalog.class);
     }
-
-//    public void updateCopy(WebDriver driver, String cssSelector, String date) throws InterruptedException {
-//      Thread.sleep(1000);
-//        editCopyButton.click();
-//}
 
     public RentsHistory showRentalHistoryOfBookCopy() throws InterruptedException {
         Thread.sleep(1000);

@@ -11,8 +11,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.LocalDate;
-//TO DO
-//Adding methods cleaning entered data
 
 public class ListOfCopiesTestSuite {
     WebDriver driver;
@@ -32,28 +30,25 @@ public class ListOfCopiesTestSuite {
         titlesCatalog.addTitle("Title", "Author", 1999);
         listOfCopies = titlesCatalog.showTitleCopies(1);
     }
-//
-//    @After
-//    public void tearDown() {
-//        driver.close();
-//    }
+
+    @After
+    public void tearDown() {
+        driver.close();
+    }
 
 
     @Test
     public void shouldAddCopyOfBookToListOfCopies() throws InterruptedException {
-
         listOfCopies.addCopyOfBookToList();
         Thread.sleep(1000);
         String indexNumber = driver.findElement(By.xpath("//ul/li/div/div[3]")).getText();
         Assertions.assertEquals("Available", indexNumber);
 
-        //
+        //Clean data after testing
         listOfCopies.removeCopyOfBook(1);
         titlesCatalog = listOfCopies.returnToTitlesCatalog();
         Thread.sleep(1000);
         titlesCatalog.removeTitle(1);
-
-
     }
 
     @Test
@@ -64,12 +59,6 @@ public class ListOfCopiesTestSuite {
         String noTitlesMessage = driver.findElement(By.xpath("//div/p")).getText();
         Assertions.assertEquals("No copies...", noTitlesMessage);
     }
-
-//    @Test
-//    public void shouldUpdateCopyPurchaseDate() throws InterruptedException {
-//        listOfCopies.addCopyOfBookToList();
-//        listOfCopies.updateCopy(driver, "#id","01/09/2020");
-//    }
 
 //Test failed
     @Test

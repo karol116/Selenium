@@ -5,9 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.List;
 
 import static java.lang.String.valueOf;
@@ -62,7 +60,6 @@ public class TitlesCatalog extends AbstractPage {
         title.clear();
         author.clear();
         year.clear();
-
         title.sendKeys(newTitle);
         author.sendKeys(newAuthor);
         year.sendKeys(valueOf(newYear));
@@ -70,8 +67,7 @@ public class TitlesCatalog extends AbstractPage {
     }
 
     public ListOfCopies showTitleCopies(int indexOfTitle) {
-        wait.until(ExpectedConditions.elementToBeClickable(showHistoryButton));
-
+        wait.until(elementToBeClickable(showHistoryButton));
         List<WebElement> booksCopies = driver.findElements(By.xpath("//div/a/button"));
         booksCopies.get(indexOfTitle - 1).click();
         return PageFactory.initElements(driver, ListOfCopies.class);

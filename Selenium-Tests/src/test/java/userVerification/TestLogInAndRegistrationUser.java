@@ -65,8 +65,8 @@ public class TestLogInAndRegistrationUser {
         mainPage.logInUser("user111", "stR091");
 
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#add-title-button")));
-
         String nameOfAddNewTitleButton = driver.findElement(By.cssSelector("#add-title-button")).getText();
+
         Assertions.assertEquals("ADD NEW", nameOfAddNewTitleButton);
     }
 
@@ -74,20 +74,18 @@ public class TestLogInAndRegistrationUser {
     public void shouldNotLogInNotRegisteredUser() {
         MainPage mainPage = PageFactory.initElements(driver, MainPage.class);
         mainPage.logInUser("user", "pass111");
-
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-
         String failedLoginMessage = driver.findElement(By.xpath("//div/form/div[1]/p")).getText();
+
         Assertions.assertEquals("Login failed", failedLoginMessage);
     }
     @Test
     public void shouldNotLogInUserWhenWrongPasswordIsEntered() {
         MainPage mainPage = PageFactory.initElements(driver, MainPage.class);
         mainPage.logInUser("user111", "pass111");
-
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-
         String failedLoginMessage = driver.findElement(By.xpath("//div/form/div[1]/p")).getText();
+
         Assertions.assertEquals("Login failed", failedLoginMessage);
     }
 }

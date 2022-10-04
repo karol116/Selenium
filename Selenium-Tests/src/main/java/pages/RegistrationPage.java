@@ -24,8 +24,6 @@ public class RegistrationPage extends AbstractPage {
     static WebElement password;
     @FindBy(css = "#password-repeat")
     static WebElement repeatedPassword;
-    @FindBy(css = "#login-btn")
-    static WebElement logInButton;
     @FindBy(css = "#register-btn")
     static WebElement signUpButton;
 
@@ -42,7 +40,6 @@ public class RegistrationPage extends AbstractPage {
         rules.add(new CharacterRule(UpperCase));
         rules.add(new CharacterRule(Digit));
         rules.add(new CharacterRule(Special));
-
         String pass = new PasswordGenerator().generatePassword(randomNumber, rules);
         System.out.println(pass);
         return pass;
@@ -51,11 +48,9 @@ public class RegistrationPage extends AbstractPage {
     public RegistrationPage fillRegisterFields(String user, String pass) {
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.visibilityOf(repeatedPassword));
-
         login.sendKeys(user);
         password.sendKeys(pass);
         repeatedPassword.sendKeys(pass);
-
         return PageFactory.initElements(driver, RegistrationPage.class);
     }
 

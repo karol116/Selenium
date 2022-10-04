@@ -8,10 +8,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.concurrent.TimeUnit;
+
+import static org.openqa.selenium.support.ui.ExpectedConditions.*;
+import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
 public class TitlesCatalogTestSuite {
     WebDriver driver;
@@ -63,11 +64,11 @@ public class TitlesCatalogTestSuite {
     public void shouldRemoveBookFromTitlesCatalog() throws InterruptedException {
         titlesCatalog.addTitle("Czysty kod", "Robert C. Martin", 2009);
         titlesCatalog.addTitle("Docker Praktyczne Zastosowania", "Sean P. Kane", 2018);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//ul/li[1]/div/button[2]")));
+        wait.until(elementToBeClickable(By.xpath("//ul/li[1]/div/button[2]")));
         titlesCatalog.removeTitle(1);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//ul/li[2]/div/button[2]")));
+        wait.until(elementToBeClickable(By.xpath("//ul/li[2]/div/button[2]")));
         titlesCatalog.removeTitle(2);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div/p")));
+        wait.until(visibilityOfElementLocated(By.xpath("//div/p")));
 
         String noTitlesMessage = driver.findElement(By.xpath("//div/p")).getText();
 

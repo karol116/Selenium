@@ -26,7 +26,6 @@ public class MainPage extends AbstractPage {
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.elementToBeClickable(signUpButton));
         signUpButton.click();
-
         return PageFactory.initElements(driver, RegistrationPage.class);
     }
 
@@ -36,7 +35,6 @@ public class MainPage extends AbstractPage {
         login.sendKeys(user);
         password.sendKeys(pass);
         logInButton.click();
-
         return PageFactory.initElements(driver,TitlesCatalog.class);
     }
 }
